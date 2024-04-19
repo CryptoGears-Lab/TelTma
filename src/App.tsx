@@ -3,6 +3,8 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 
+import WebApp from '@twa-dev/sdk'
+
 function App() {
   const [count, setCount] = useState(0)
 
@@ -21,6 +23,11 @@ function App() {
         <button onClick={() => setCount((count) => count + 1)}>
           count is {count}
         </button>
+        <div className = "card">
+          <button onClick={()=>WebApp.showAlert(`hello world! current count is ${count}`)}>
+            显示警告
+          </button>
+        </div>
         <p>
           Edit <code>src/App.tsx</code> and save to test HMR
         </p>
